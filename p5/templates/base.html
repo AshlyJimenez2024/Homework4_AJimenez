@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Comment Board{% endblock %}</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+    label { display: block; margin-top: 1rem; font-weight: bold; }
+    input, textarea { box-sizing: border-box; width: 100%; max-width: 36rem; padding: .5rem; }
+    button { margin: 1rem 0; padding: .5rem 1rem; cursor: pointer; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #aaa; padding: .5rem; text-align: left; overflow-wrap: anywhere; }
+    th { background: #eee; }
+    .error { color: #a00; }
+    footer { border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header><h1>Comment Board</h1><nav><a href="{{ url_for('index') }}">Home</a> | <a href="{{ url_for('search') }}">Search</a></nav></header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer>Ashly Jimenez</footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Search Comments{% endblock %}
+{% block content %}
+<h2>Search comments</h2>
+<p>Enter one or more filters. All entered filters must match.</p>
+<form action="{{ url_for('search') }}" method="get">
+  <label for="author">Author</label>
+  <input id="author" name="author" value="{{ author }}">
+  <label for="words">Words in comment</label>
+  <input id="words" name="words" value="{{ words }}">
+  <label for="hashtag">Hashtag</label>
+  <input id="hashtag" name="hashtag" value="{{ hashtag }}" placeholder="#python"><br>
+  <button type="submit">Search</button>
+</form>
+<h2>Results</h2>
+{% if not author and not words and not hashtag %}
+<p>Enter a search filter to see results.</p>
+{% else %}
+{% include "_comments.html" %}
+{% endif %}
+{% endblock %}

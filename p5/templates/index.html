@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Post a comment</h2>
+<p>Include hashtags such as #python in your comment.</p>
+{% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+<form method="post">
+  <label for="author">Your name</label>
+  <input id="author" name="author" value="{{ username }}" required>
+  <label for="comment">Comment</label>
+  <textarea id="comment" name="comment" rows="4" required>{{ comment }}</textarea><br>
+  <button type="submit">Post comment</button>
+</form>
+<h2>Previous comments</h2>
+{% include "_comments.html" %}
+{% endblock %}

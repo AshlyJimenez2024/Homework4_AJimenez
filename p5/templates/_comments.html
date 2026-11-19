@@ -1,0 +1,12 @@
+{% if comments %}
+<table>
+  <thead><tr><th>Author</th><th>Date</th><th>Time</th><th>Comment</th><th>Hashtags</th></tr></thead>
+  <tbody>
+    {% for item in comments %}
+    <tr><td>{{ item.author }}</td><td>{{ item.date }}</td><td>{{ item.time }}</td><td>{{ item.comment }}</td><td>{{ item.hashtags }}</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No comments to display.</p>
+{% endif %}
